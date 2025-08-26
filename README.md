@@ -2,6 +2,8 @@
 
 This tool stitches many tile images from the Minecraft Mod "JourneyMap" named `x,y.png` into one large image entirely in the browser.
 
+### INSTANT AVAILABLE HERE: [JourneyMap Combiner](https://th3c0d3r.github.io/journeymap-combiner/)
+
 ## Features
 - Drag & drop or file picker
 - Thumbnail preview
