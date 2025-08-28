@@ -162,7 +162,6 @@ a#downloadLink:hover {
     text-shadow: 0 0 10px #00ffaa;
     animation: blink 1.2s infinite alternate;
     font-size: 14px;
-    display: none;
     margin-bottom: 20px;
 }
 
