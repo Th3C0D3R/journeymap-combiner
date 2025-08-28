@@ -50,8 +50,6 @@ function updateSummary() {
 function resetUI() {
     selectedFiles = [];
     thumbs.innerHTML = '';
-    if (summary) summary.textContent = '';
-    if (summary2) summary2.textContent = '';
     updateSummary();
     if (limits) limits.textContent = '';
     if (downloadLink) downloadLink.dataset.ref = '';
