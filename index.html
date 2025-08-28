@@ -1,42 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>JounreyMap Combiner (Client-side)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JourneyMap Combiner</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main class="card">
-        <h1>JounreyMap Combiner (Client-side)</h1>
-        <p class="muted">Upload PNGs named like <code>0,0.png</code>, <code>-1,0.png</code> etc. Origin (0,0) is center,
-            X→right, Y→down.</p>
+    <div class="container">
+        <h1>JourneyMap Combiner</h1>
+        <p class="subtitle">Merge multiple JourneyMap images into one</p>
 
-        <section class="controls">
-            <label class="dropzone" id="dropzone">
-                <strong>Click or drag & drop files</strong>
-                <input id="fileInput" type="file" accept="image/png" multiple />
-            </label>
-
-            <div class="opts">
-                <label class="pill"><input id="safeMode" type="checkbox" /> Safe mode (bands)</label>
-                <label class="pill">Rows per band:
-                    <input id="rowsPerBand" type="number" min="1" value="8" />
-                </label>
-                <div class="buttons">
-                    <button id="stitchBtn" disabled>Stitch</button>
-                    <button id="clearBtn">Clear</button>
-                    <a id="downloadLink" download="stitched.png" data-ref=""><button id="downloadBtn" disabled>Download</button></a>
-                </div>
-            </div>
-        </section>
-
-        <div id="statusRow" class="statusRow">
-            <div id="summary" class="summary"></div>
-            <div id="limits" class="limits"></div>
+        <div class="drag-drop-zone" id="dropZone">
+            <p>Drag & Drop your images here or click to select files</p>
+            <input type="file" id="fileInput" multiple accept=".png,.jpg,.jpeg">
         </div>
+
+        <div class="input-section">
+            <button id="combineBtn">Combine Images</button>
+        </div>
+
+        <br />
 
         <div class="progress" id="progressLoad" hidden>
             <div class="labelRow">
@@ -56,16 +42,19 @@
             </div>
         </div>
 
-        <h3>Thumbnails</h3>
-        <div id="thumbs" class="grid"></div>
+        <br />
 
-        <section id="result" class="result" hidden>
-            <div class="doneRow">
-                <div class="ok">Done — preview below</div>
-            </div>
-            <img id="finalImg" alt="stitched result" />
-        </section>
-    </main>
+        <div class="file-list" id="fileList"></div>
+
+
+        <div class="output-section">
+            <a id="downloadLink1" href="#" download="combined.png">Download Combined Image</a>
+            <br />
+            <img id="resultCanvas"></img>
+            <a id="downloadLink" href="#" download="combined.png">Download Combined Image</a>
+            <p id="status">Select images and click "Combine Images"</p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
