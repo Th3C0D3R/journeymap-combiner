@@ -82,6 +82,7 @@ dropZone.addEventListener('drop', e => {
 fileInput.addEventListener('change', () => handleFiles([...fileInput.files]));
 
 function handleFiles(files) {
+    selectedFiles = [];
     selectedFiles.push(...files);
     renderThumbs();
     updateSummary();
