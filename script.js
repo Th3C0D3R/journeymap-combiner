@@ -8,7 +8,8 @@ const downloadBtn1 = document.getElementById('downloadLink1');
 const downloadLink1 = document.getElementById('downloadLink1');
 const downloadBtn = document.getElementById('downloadLink');
 const downloadLink = document.getElementById('downloadLink');
-const summary = document.getElementById('summary') || document.getElementById('status');
+const summary2 = document.getElementById('status2');
+const summary = document.getElementById('status');
 const limits = document.getElementById('limits') || document.getElementById('status');
 const progressLoad = document.getElementById('progressLoad') || document.getElementById('status');
 const progressDraw = document.getElementById('progressDraw') || document.getElementById('status');
@@ -43,11 +44,14 @@ function updateSummary() {
     const count = selectedFiles.length;
     const total = selectedFiles.reduce((s, f) => s + f.size, 0);
     if (summary) summary.textContent = count ? `Selected ${count} file(s) • ${formatBytes(total)}` : '';
+    if (summary2) summary2.textContent = count ? `Selected ${count} file(s) • ${formatBytes(total)}` : '';
 }
 
 function resetUI() {
     selectedFiles = [];
     thumbs.innerHTML = '';
+    if (summary) summary.textContent = '';
+    if (summary2) summary2.textContent = '';
     updateSummary();
     if (limits) limits.textContent = '';
     if (downloadLink) downloadLink.dataset.ref = '';
